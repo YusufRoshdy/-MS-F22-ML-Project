@@ -14,4 +14,4 @@ The goal of this project is to run an optimized version of Yolov7 on Raspberry P
 After running Yolov5 nano on the PI the average FPS was ~0.33, even with overclocking(makes the PI unstable) the FPS was ~0.5
 
  
-[screen-gif](./Yolov5n output.gif)
+![screen-gif](./Yolov5n output.gif)
