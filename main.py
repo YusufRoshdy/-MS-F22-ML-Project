@@ -25,14 +25,17 @@ def yolov5_process(model, frame):
 
 if __name__ == '__main__':
     # load pretrained model
-    model = get_yolov5_model(size='l')
+    model = get_yolov5_model(size='n')
 
 
     cap = cv2.VideoCapture('Innopolis University.mp4')
 
+    w, h = (1280, 720)
+    fourcc = cv2.VideoWriter_fourcc('m', 'p', '4', 'v')
+    writer = cv2.VideoWriter('output.mp4', fourcc, 30, (w, h))
 
     # Read until video is completed
-    while (cap.isOpened()):
+    while cap.isOpened():
         # Capture frame-by-frame
         ret, frame = cap.read()
         if not ret:
@@ -48,6 +51,11 @@ if __name__ == '__main__':
         cv2.putText(frame, fps, (7, 70), cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 255, 0), 2)
 
         cv2.imshow('Frame', frame)
+
+        writer.write(frame)
+
         if cv2.waitKey(25) & 0xFF == ord('q'):
             break
 
+    cap.release()
+    writer.release()
