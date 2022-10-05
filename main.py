@@ -29,6 +29,9 @@ if __name__ == '__main__':
 
 
     cap = cv2.VideoCapture('Innopolis University.mp4')
+    if not cap.isOpened():
+        print("Can't open source")
+        exit()
 
     w, h = (1280, 720)
     fourcc = cv2.VideoWriter_fourcc('m', 'p', '4', 'v')
