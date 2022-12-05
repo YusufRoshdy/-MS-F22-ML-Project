@@ -1,2 +1,8 @@
-opencv-python
 yolov5
+Flask
+numpy
+torch
+torchvision
+onnxruntime
+opencv-python
+torchsummary
